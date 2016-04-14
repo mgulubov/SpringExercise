@@ -28,6 +28,11 @@ public class Spittle {
 	public boolean equals(Object that) {
 		return EqualsBuilder.reflectionEquals(this, that, "_id", "_time");
 	}
+	
+	@Override
+	public int hashCode() {
+		return HashCodeBuilder.reflectionHashCode(this, "_id", "_time");
+	}
 
 	public Long getId() {
 		return this._id;
@@ -47,10 +52,5 @@ public class Spittle {
 
 	public Date getTime() {
 		return this._time;
-	}
-
-	@Override
-	public int hashCode() {
-		return HashCodeBuilder.reflectionHashCode(this, "_id", "_time");
 	}
 }
